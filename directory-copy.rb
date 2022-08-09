@@ -22,6 +22,10 @@ def print_header
   puts "-------------"
 end
 
+def first_letter(students)
+  return students.select { |student| student[:name].start_with?("A") }
+end
+
 def print(students)
   students.each.with_index(1) do |student, index|
     puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
@@ -35,5 +39,6 @@ end
 students = input_students
 #nothing happens until we call the methods
 print_header
-print(students)
-print_footer(students)
+# print(students)
+print(first_letter(students))
+print_footer(first_letter(students))
