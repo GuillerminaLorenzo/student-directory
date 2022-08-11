@@ -1,21 +1,21 @@
 def input_students
-  puts "Please enter the names of the students"
-  puts "To finish, just hit return twice"
+  puts "Please enter the names of the students".center(43)
+  puts "To finish, just hit return twice".center(43)
   # create an empty array
   students = []
   # get the first nameand hobbie
   name = gets.chomp
-  puts "Please enter one hobbie:"
+  puts "Please enter one hobbie:".center(43)
   hobbie = gets.chomp 
   # while the name is not empty, repeat this code
   while !name.empty? do
     # add the student hash to the array
     students << {name: name, cohort: :november, hobbie: hobbie}
-    puts "Now we have #{students.count} students"
+    puts "Now we have #{students.count} students".center(43)
     # get another name from the user
     name = gets.chomp 
     if !name.empty?
-    puts "Please enter one hobbie:"
+    puts "Please enter one hobbie:".center(43)
     hobbie = gets.chomp
     end
   end
@@ -24,8 +24,8 @@ def input_students
 end
 
 def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+  puts "The students of Villains Academy".center(43)
+  puts "-------------".center(43)
 end
 
 def first_letter(students)
@@ -43,7 +43,7 @@ def print(students)
 end
 
 def print_footer(students)
-  puts "Overall, we have #{students.count} great students"
+  puts "Overall, we have #{students.count} great students".center(43)
 end
 
 students = input_students
