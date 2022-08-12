@@ -3,21 +3,15 @@ def input_students
   puts "To finish, just hit return twice".center(43)
   # create an empty array
   students = []
-  # get the first nameand hobbie
+  # get the first name
   name = gets.chomp
-  puts "Please enter one hobbie:".center(43)
-  hobbie = gets.chomp 
   # while the name is not empty, repeat this code
   while !name.empty? do
     # add the student hash to the array
-    students << {name: name, cohort: :november, hobbie: hobbie}
+    students << {name: name, cohort: :november}
     puts "Now we have #{students.count} students".center(43)
     # get another name from the user
-    name = gets.chomp 
-    if !name.empty?
-    puts "Please enter one hobbie:".center(43)
-    hobbie = gets.chomp
-    end
+    name = gets.chomp
   end
   # return the array of students
   students
@@ -37,8 +31,13 @@ def name_length(students)
 end
 
 def print(students)
-  students.each.with_index(1) do |student, index|
-    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort), likes to #{student[:hobbie]}."
+  index = 0
+  counter = 1
+  while index < students.length do
+    student = students[index]
+    puts "#{counter}. #{student[:name]} (#{student[:cohort]} cohort)"
+    counter += 1
+    index += 1
   end
 end
 
